@@ -6,3 +6,4 @@
 - Java8
 - MySQL, H2
 - Spring Boot
+- JUnit5
