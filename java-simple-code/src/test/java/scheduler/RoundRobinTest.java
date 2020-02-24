@@ -39,4 +39,20 @@ public class RoundRobinTest {
 
         RoundRobin.run(numberOfCPU, processes, quantum.getTime());
     }
+
+    @Test
+    void name() {
+        String[] logs = {
+                "12:00:00.100 0.400",
+                "12:00:00.200 0.500",
+                "12:00:00.300 0.100",
+                "12:00:00.400 0.600",
+                "12:00:00.500 0.200",
+                "12:00:00.600 0.400"
+        };
+
+        ScheduleProblem problem = new ScheduleProblem();
+        int[] answer = problem.solution(2, logs);
+        System.out.println(answer[0] + ", " + answer[1]);
+    }
 }
