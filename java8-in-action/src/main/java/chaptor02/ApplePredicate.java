@@ -1,4 +1,4 @@
-package java8.behaviorparameterization.apple;
+package chaptor02;
 
 public interface ApplePredicate {
     boolean test(Apple apple);

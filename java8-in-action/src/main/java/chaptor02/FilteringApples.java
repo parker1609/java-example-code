@@ -1,4 +1,4 @@
-package java8.behaviorparameterization.apple;
+package chaptor02;
 
 import java.util.ArrayList;
 import java.util.List;

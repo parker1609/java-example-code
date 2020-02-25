@@ -1,4 +1,4 @@
-package java8.behaviorparameterization.apple;
+package chaptor02;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

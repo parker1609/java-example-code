@@ -1,4 +1,4 @@
-package java8.behaviorparameterization.apple;
+package chaptor02;
 
 public class AppleHeavyWeightPredicate implements ApplePredicate {
 

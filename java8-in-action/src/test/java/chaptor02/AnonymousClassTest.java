@@ -1,9 +1,9 @@
-package java8.anonymousclass;
+package chaptor02;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-public class SampleTest {
+public class AnonymousClassTest {
     public class MeaningOfThis {
         public final int value = 4;
         public void doIt() {
