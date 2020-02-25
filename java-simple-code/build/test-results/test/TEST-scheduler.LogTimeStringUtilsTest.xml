@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="scheduler.LogTimeStringUtilsTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-02-07T01:15:34" hostname="bagseongbeom-ui-MacBookPro.local" time="0.052">
-  <properties/>
-  <testcase name="split_arrive_time_and_burst_time()" classname="scheduler.LogTimeStringUtilsTest" time="0.052"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
