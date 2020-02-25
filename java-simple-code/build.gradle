@@ -12,6 +12,9 @@ repositories {
 }
 
 dependencies {
+    // https://mvnrepository.com/artifact/org.fitnesse/fitnesse For cleancoders Package
+    compile group: 'org.fitnesse', name: 'fitnesse', version: '20081201'
+
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.1.0'
     testImplementation 'org.assertj:assertj-core:3.11.1'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.1.0'
