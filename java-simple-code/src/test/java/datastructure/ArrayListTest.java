@@ -12,7 +12,6 @@ public class ArrayListTest {
 
     @BeforeEach
     void setup() {
-        array = new ArrayList<>();
         array.addLast(1);
         array.addLast(2);
         array.addLast(3);
