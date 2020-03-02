@@ -1,38 +1,39 @@
 package sorting;
 
-public class QuickSort {
-    public static void run(int[] array) {
+public class QuickSort implements Sort {
+
+    @Override
+    public void run(int[] array) {
         quickSort(array, 0, array.length - 1);
     }
 
-    public static void quickSort(int[] arr, int left, int right) {
-        int mid = partition(arr, left, right);
-        if (left < mid - 1) {  // 왼쪽 절반 정렬
-            quickSort(arr, left, mid - 1);
-        }
-        if (mid < right) {     // 오른쪽 절반 정렬
-            quickSort(arr, mid, right);
+    private static void quickSort(int[] arr, int left, int right) {
+        if (left <= right) {
+            int pivot = partition(arr, left, right);
+            quickSort(arr, left, pivot - 1);
+            quickSort(arr, pivot + 1, right);
         }
     }
 
     private static int partition(int[] arr, int left, int right) {
-        int pivot = arr[(left + right) / 2];  // 분할 기준 원소 선정
-        while (left <= right) {
-            // 왼쪽에서 오른쪽으로 옮겨야 하는 원소 탐색
-            while (arr[left] < pivot) left++;
+        int pivot = arr[left];
+        int low = left + 1;
+        int high = right;
 
-            // 오른쪽에서 왼쪽으로 옮겨야 하는 원소 탐색
-            while (arr[right] > pivot) right--;
+        while (low <= high) {
+            while (low <= right && pivot >= arr[low])
+                low++;
+            while (high >= (left + 1) && pivot <= arr[high])
+                high--;
 
-            // 원소를 스왑한 뒤 left와 right를 이동
-            if (left <= right) {
-                swap(arr, left, right);  // 스왑
-                left++;
-                right--;
+            if (low <= high) {
+                swap(arr, low, high);
             }
         }
 
-        return left;
+        swap(arr, left, high);
+
+        return high;
     }
 
     private static void swap(int[] arr, int i1, int i2) {

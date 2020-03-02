@@ -1,47 +1,49 @@
 package sorting;
 
-public class MergeSort {
-    public static void run(int[] array) {
+public class MergeSort implements Sort {
+
+    @Override
+    public void run(int[] array) {
         int[] helper = new int[array.length];
-        mergeSorting(array, helper, 0, array.length - 1);
+        mergeSort(array, 0, array.length - 1, helper);
     }
 
-    private static void mergeSorting(int[] array, int[] helper, int low, int high) {
-        if (low < high) {
-            int mid = (low + high) / 2;
-            mergeSorting(array, helper, low, mid);  // 왼쪽 절반 정렬
-            mergeSorting(array, helper, mid + 1, high);  // 오른쪽 절반 정렬
-            merge(array, helper, low, mid, high);  // 병합
+    private static void mergeSort(int[] arr, int left, int right, int[] helper) {
+        if (left < right) {
+            int mid = (left + right) / 2;
+            mergeSort(arr, left, mid, helper);
+            mergeSort(arr, mid + 1, right, helper);
+            mergeTwoArea(arr, left, mid, right, helper);
         }
     }
 
-    private static void merge(int[] array, int[] helper, int low, int mid, int high) {
-        /* 절반짜리 두 배열을 helper 배열에 복사한다. */
-        for (int i = low; i <= high; ++i) {
-            helper[i] = array[i];
-        }
+    private static void mergeTwoArea(int[] arr, int left, int mid, int right, int[] helper) {
+        int leftAreaIdx = left;
+        int rightAreaIdx = mid + 1;
 
-        int helperLeft = low;
-        int helperRight = mid + 1;
-        int current = low;
+        int sortArrIdx = left;
 
-        /* helper 배열 순회. 왼쪽 절반과 오른쪽 절반을 비교하여 작은 원소를
-         * 절반짜리 두 배열을 helper 배열에 복사한다. */
-        while (helperLeft <= mid && helperRight <= high) {
-            if (helper[helperLeft] <= helper[helperRight]) {
-                array[current] = helper[helperLeft];
-                helperLeft++;
-            } else {  // 오른쪽 원소가 왼쪽 원소보다 작으면
-                array[current] = helper[helperRight];
-                helperRight++;
+        while (leftAreaIdx <= mid && rightAreaIdx <= right) {
+            if (arr[leftAreaIdx] < arr[rightAreaIdx]) {
+                helper[sortArrIdx] = arr[leftAreaIdx++];
+            } else {
+                helper[sortArrIdx] = arr[rightAreaIdx++];
             }
-            current++;
+            sortArrIdx++;
         }
 
-        /* 왼쪽 절반 배열에 남은 원소들을 원래 배열에 복사해 넣는다. */
-        int remaining = mid - helperLeft;
-        for (int i = 0; i <= remaining; ++i) {
-            array[current + i] = helper[helperLeft + i];
+        if (leftAreaIdx <= mid) {
+            for (int i = leftAreaIdx; i <= mid; ++i) {
+                helper[sortArrIdx++] = arr[i];
+            }
+        } else if (rightAreaIdx <= right) {
+            for (int i = rightAreaIdx; i <= right; ++i) {
+                helper[sortArrIdx++] = arr[i];
+            }
+        }
+
+        for (int i = left; i <= right; ++i) {
+            arr[i] = helper[i];
         }
     }
 }
