@@ -1,6 +1,5 @@
-package interviewproblem;
+package interviewproblem.linkedlist;
 
-import interviewproblem.linkedlist.LinkedListNode;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;

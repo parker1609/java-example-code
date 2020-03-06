@@ -1,9 +1,10 @@
-package interviewproblem;
+package interviewproblem.linkedlist;
 
-import interviewproblem.linkedlist.*;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class LinkedListProblemTest {
 
@@ -132,5 +133,31 @@ public class LinkedListProblemTest {
         n2.next.next = new LinkedListNode(5);
 
         assertThat(Problem5.solve2(n1, n2)).isEqualTo(912);
+    }
+
+    @Test
+    void problem_6_1() {
+        LinkedListNode head = new LinkedListNode(1);
+        head.next = new LinkedListNode(2);
+        head.next.next = new LinkedListNode(2);
+        head.next.next.next = new LinkedListNode(1);
+
+        assertTrue(Problem6.isPalindromeReverse(head));
+
+        head.next.next.next.next = new LinkedListNode(3);
+        assertFalse(Problem6.isPalindromeReverse(head));
+    }
+
+    @Test
+    void problem_6_2() {
+        LinkedListNode head = new LinkedListNode(1);
+        head.next = new LinkedListNode(2);
+        head.next.next = new LinkedListNode(2);
+        head.next.next.next = new LinkedListNode(1);
+
+        assertTrue(Problem6.isPalindromeIter(head));
+
+        head.next.next.next.next = new LinkedListNode(3);
+        assertFalse(Problem6.isPalindromeIter(head));
     }
 }

@@ -9,9 +9,6 @@ import java.util.HashSet;
  */
 public class Problem1 {
 
-    /*
-    n의 내부를 바꾸면 외부의 n도 변경되는지 확인해볼 것
-     */
     public static void solve(LinkedListNode n) {
         HashSet<Integer> unique = new HashSet<>();
         LinkedListNode previous = null;
