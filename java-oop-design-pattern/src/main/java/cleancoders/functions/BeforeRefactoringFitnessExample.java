@@ -1,4 +1,4 @@
-package cleancoders;
+package cleancoders.functions;
 
 import fitnesse.responders.run.SuiteResponder;
 import fitnesse.wiki.*;

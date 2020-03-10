@@ -1,4 +1,4 @@
-package cleancoders;
+package cleancoders.functions;
 
 import fitnesse.wiki.*;
 import org.junit.jupiter.api.BeforeEach;

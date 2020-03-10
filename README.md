@@ -15,5 +15,6 @@
     - Java8 In Action 책 관련 코드
 - [JPA N+1 문제 예제 코드](https://github.com/CODEMCD/java-example-code/tree/master/jpa-n-plus-one-problem)
     - [이동욱님 블로그 N+1 문제 및 해결방안](https://jojoldu.tistory.com/165) 따라해보기
-- [Java OOP]
+- [Java OOP and design pattern]()
+    - Clean Coders
     - 개발자가 반드시 정복해야할 객체지향과 디자인패턴 책 관련 코드
