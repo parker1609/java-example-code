@@ -8,4 +8,11 @@ public class AbstractTest {
         Animal dog = new Dog("바둑이", 3);
         dog.speak();
     }
+
+    @Test
+    void final_test() {
+        final Animal dog = new Dog("abc", 3);
+        dog.setName("def");
+        System.out.println(dog.getName());
+    }
 }
