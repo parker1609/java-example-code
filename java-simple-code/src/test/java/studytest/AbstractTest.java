@@ -15,4 +15,19 @@ public class AbstractTest {
         dog.setName("def");
         System.out.println(dog.getName());
     }
+
+    @Test
+    void abstract_method() {
+        Animal animal = new Animal("test", 1) {
+            @Override
+            public void speak() {
+                System.out.println("test");
+            }
+        };
+
+        animal.move();
+
+        Animal dog = new Dog("puppy", 3);
+        dog.move();
+    }
 }

@@ -11,6 +11,10 @@ public abstract class Animal {
 
     public abstract void speak();
 
+    public void move() {
+        System.out.println("Move");
+    }
+
     public String getName() {
         return name;
     }
