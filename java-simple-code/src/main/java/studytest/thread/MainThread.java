@@ -6,6 +6,7 @@ public class MainThread {
         Thread b = new Thread(new BThread());
 
         ThreadLocalVO.set("Main Thread Local Value!!");
+        NormalLocalVO.set("Main Thread Normal Value!!");
 
         a.start();
         b.start();
@@ -18,6 +19,7 @@ public class MainThread {
         }
 
         System.out.println(ThreadLocalVO.get());
+        System.out.println(NormalLocalVO.get());
         System.out.println("main thread end.");
     }
 }
