@@ -8,18 +8,18 @@ public class InsertionSort implements Sort {
 
     private static void insertionSort(int[] array, int size) {
         for (int i = 1; i < size; ++i) {
-            int insertionData = array[i];
+            int current = array[i];
 
-            int insertionIndex;
-            for (insertionIndex = i - 1; insertionIndex >= 0; --insertionIndex) {
-                if (array[insertionIndex] > insertionData) {
-                    array[insertionIndex + 1] = array[insertionIndex];
+            int pos;
+            for (pos = i - 1; pos >= 0; --pos) {
+                if (array[pos] > current) {
+                    array[pos + 1] = array[pos];
                 } else {
                     break;
                 }
             }
 
-            array[insertionIndex + 1] = insertionData;
+            array[pos + 1] = current;
         }
     }
 }

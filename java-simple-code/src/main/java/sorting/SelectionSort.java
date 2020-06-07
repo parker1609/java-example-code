@@ -6,19 +6,21 @@ public class SelectionSort implements Sort {
         selectionSort(array, array.length);
     }
 
-    private static void selectionSort(int[] array, int size) {
-        for (int i = 0; i < size - 1; ++i) {
-            int minIdx = i;
+    private void selectionSort(int[] array, int length) {
+        for (int i = 0; i < length - 1; i++) {
+            int minData = array[i];
+            int minPosition = i;
 
-            for (int j = i + 1; j < size; ++j) {
-                if (array[minIdx] > array[j]) {
-                    minIdx = j;
+            for (int j = i + 1; j < length; j++) {
+                if (minData > array[j]) {
+                    minData = array[j];
+                    minPosition = j;
                 }
             }
 
             int temp = array[i];
-            array[i] = array[minIdx];
-            array[minIdx] = temp;
+            array[i] = array[minPosition];
+            array[minPosition] = temp;
         }
     }
 }
