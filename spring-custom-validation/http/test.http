@@ -1,0 +1,4 @@
+POST http://localhost:8080/people
+Content-Type: application/json
+
+[{"name":"park","age":28,"birthday":"20200803"},{"name":"kim","age":25,"birthday":"20200103"},{"name":"Lee","age":30,"birthday":"20200703"}]
