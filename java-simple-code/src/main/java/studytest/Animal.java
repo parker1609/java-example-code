@@ -11,6 +11,14 @@ public abstract class Animal {
 
     public abstract void speak();
 
+    public final void isOnlyAnimalMethod() {
+        System.out.println("This is Final Method!!");
+    }
+
+    public final void isOnlyAnimalMethod(String str) {
+        System.out.println("This is Final Method!!");
+    }
+
     public void move() {
         System.out.println("Move");
     }

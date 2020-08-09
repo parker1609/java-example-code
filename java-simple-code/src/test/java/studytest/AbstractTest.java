@@ -30,4 +30,11 @@ public class AbstractTest {
         Animal dog = new Dog("puppy", 3);
         dog.move();
     }
+
+    @Test
+    void final_method() {
+        final Animal dog = new Dog("abc", 3);
+        dog.isOnlyAnimalMethod();
+        dog.isOnlyAnimalMethod("temp");
+    }
 }
